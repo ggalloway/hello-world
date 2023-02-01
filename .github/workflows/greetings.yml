@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Man you got issues eh? Well good job I guess. Plus also fuck you."
+        pr-message: "First pr eh? Guess your doin some coding huh? Gettin a lot of codin done I guess? Well I'm sittin here with coke and hos. I mean diet coke and HoHos. They're better than Little Debbie Swiss Cake Rolls so don't even say nothin. Hostess BITCH!"
